@@ -1,0 +1,56 @@
+<!--
+* Created by trungquandev.com's author on 18/02/2020.
+*/
+// views/master.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="https://trungquandev.com/wp-content/uploads/2016/11/LOGO.png" />
+  <title>NodeJS send email with nodemailer</title>
+  <!-- Get bootstrap from CDN-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h4 class="text-left mt-5">
+      NodeJS send email example - <a href="https://trungquandev.com" target="blank">trungquandev.com</a>
+    </h4>
+    <hr>
+    <div class="text-left">
+      <form action="/send-email" method="post">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="to">To:</label>
+            <input type="email" class="form-control" name="to" required>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="subject">Subject:</label>
+            <input type="text" class="form-control" name="subject" required>
+          </div>
+        </div>
+  
+        <div class="row">
+            <div class="form-group col-md-6">
+              <label for="body">Body:</label>
+              <textarea cols="5" rows="5"class="form-control" name="body" required></textarea>
+            </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-success">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</body>
+</html>
