@@ -1,4 +1,4 @@
-# Node.js send emails
+# Node.js send email tutorial.
 
 ## Requirements
 
