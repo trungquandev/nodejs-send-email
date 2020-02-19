@@ -13,6 +13,11 @@
   <title>NodeJS send email with nodemailer</title>
   <!-- Get bootstrap from CDN-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    .ck-content {
+      height: 300px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -23,27 +28,27 @@
     <div class="text-left">
       <form action="/send-email" method="post">
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-8">
             <label for="to">To:</label>
             <input type="email" class="form-control" name="to" required>
           </div>
         </div>
   
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-8">
             <label for="subject">Subject:</label>
             <input type="text" class="form-control" name="subject" required>
           </div>
         </div>
   
         <div class="row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-8">
               <label for="body">Body:</label>
-              <textarea cols="5" rows="5"class="form-control" name="body" required></textarea>
+              <textarea id="classic-editor" cols="5" rows="5"class="form-control" name="body"></textarea>
             </div>
         </div>
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-8">
             <button type="submit" class="btn btn-success">Send</button>
           </div>
         </div>
@@ -52,5 +57,20 @@
   </div>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+  <script>
+    $(document).ready(function() {
+      ClassicEditor
+        .create(document.querySelector('#classic-editor'), {
+          initialData: `
+            <p>Cảm ơn các bạn đã ủng hộ xem bài viết trên trang blog <strong>trungquandev.com</strong> chính thức của mình.</p>
+            <p>Warm regards, <a href="https://trungquandev.com">https://trungquandev.com</a></p>
+          `
+        })
+        .catch(error => {
+            console.error( error )
+        })
+    })
+  </script>
 </body>
 </html>

@@ -4,16 +4,20 @@
  */
 const nodeMailer = require('nodemailer')
 
-const adminEmail = 'quanlightning2@gmail.com'
-const adminPassword = 'Thay thế chỗ này thành mật khẩu của bạn'
+// Những thông tin dưới đây các bạn có thể ném nó vào biến môi trường env nhé.
+// Vì để demo nên mình để các biến const ở đây.
+const adminEmail = 'Thay thế chuỗi string này thành địa chỉ admin email của bạn.'
+const adminPassword = 'Thay thế chuỗi string này thành mật khẩu admin email của bạn.'
+// Mình sử dụng host của google - gmail
 const mailHost = 'smtp.gmail.com'
 const mailPort = '587'
 
 const sendMail = (to, subject, htmlContent) => {
+  // Khởi tạo một thằng transporter object sử dụng chuẩn giao thức truyền tải SMTP với các thông tin cấu hình ở trên.
   const transporter = nodeMailer.createTransport({
     host: mailHost,
     port: mailPort,
-    secure: false, // use SSL - TLS
+    secure: false, // true for 465, false for other ports
     auth: {
       user: adminEmail,
       pass: adminPassword
@@ -21,13 +25,16 @@ const sendMail = (to, subject, htmlContent) => {
   })
 
   const options = {
-    from: adminEmail,
-    to: to,
-    subject: subject,
-    html: htmlContent
+    from: adminEmail, // địa chỉ admin email bạn dùng để gửi
+    to: to, // địa chỉ gửi đến
+    subject: subject, // Tiêu đề của mail
+    html: htmlContent // Phần nội dung mail mình sẽ dùng html thay vì thuần văn bản thông thường.
   }
 
-  return transporter.sendMail(options) // This default return a promise
+  // hàm transporter.sendMail() này sẽ trả về cho chúng ta một Promise
+  return transporter.sendMail(options)
 }
 
-module.exports = sendMail
+module.exports = {
+  sendMail: sendMail
+}
