@@ -10,14 +10,15 @@ const adminEmail = 'Thay thế chuỗi string này thành địa chỉ admin ema
 const adminPassword = 'Thay thế chuỗi string này thành mật khẩu admin email của bạn.'
 // Mình sử dụng host của google - gmail
 const mailHost = 'smtp.gmail.com'
-const mailPort = '587'
+// 587 là một cổng tiêu chuẩn và phổ biến trong giao thức SMTP
+const mailPort = 587
 
 const sendMail = (to, subject, htmlContent) => {
   // Khởi tạo một thằng transporter object sử dụng chuẩn giao thức truyền tải SMTP với các thông tin cấu hình ở trên.
   const transporter = nodeMailer.createTransport({
     host: mailHost,
     port: mailPort,
-    secure: false, // true for 465, false for other ports
+    secure: false, // nếu các bạn dùng port 465 (smtps) thì để true, còn lại hãy để false cho tất cả các port khác
     auth: {
       user: adminEmail,
       pass: adminPassword

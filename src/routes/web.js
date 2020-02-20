@@ -11,7 +11,7 @@ let initRoutes = (app) => {
   // Gọi ra trang home cho việc upload
   router.get('/', homeController.getHome)
   
-  // Gửi email
+  // Gọi hành động gửi email
   router.post('/send-email', emailController.sendMail)
 
   return app.use('/', router)
