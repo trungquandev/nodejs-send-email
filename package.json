@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemailer": "^4.4.2"
+    "nodemailer": "^6.4.16"
   }
 }
