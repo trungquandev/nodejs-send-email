@@ -1,10 +1,11 @@
 /**
  * Created by trungquandev.com's author on 18/02/2020.
- * homeController.js
+ * homeController.ts
  */
+import { Request, Response } from "express";
 const path = require('path')
 
-let getHome = (req, res) => {
+let getHome = (req: Request, res: Response) => {
   return res.sendFile(path.join(`${__dirname}/../views/master.html`))
 }
 
