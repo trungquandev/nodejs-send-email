@@ -1,6 +1,7 @@
 /**
  * Created by trungquandev.com's author on 18/02/2020.
- * routes/web.js
+ * Contributed by https://github.com/AzouKr
+ * routes/web.ts
  */
 import { Express, Request, Response } from "express";
 const homeController = require('../controllers/homeController')

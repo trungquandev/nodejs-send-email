@@ -10,10 +10,16 @@ Clone project and run test.
 $ git clone https://git_url_clone <project_dir>
 $ cd <project_dir>
 $ npm install
-$ node src/server.js
+$ npm start
 ```
 
-* Change your admin email account in the file: **src/utils/mailer.js**
+To compile it into Javascript:
+
+```
+$ tsc --outDir DIRECTORY>
+```
+
+* Change your admin email account in the file: **src/utils/mailer.ts**
 
 ### Guide for this repository is here:
 

@@ -1,6 +1,7 @@
 /**
  * Created by trungquandev.com's author on 18/02/2020.
- * server.js
+ * Contributed by https://github.com/AzouKr
+ * server.ts
  */
 import express from "express";
 const initRoutes = require('./routes/web')

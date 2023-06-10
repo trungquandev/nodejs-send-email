@@ -1,5 +1,6 @@
 /**
  * Created by trungquandev.com's author on 18/02/2020.
+ * Contributed by https://github.com/AzouKr
  * emailController.ts
  */
 import { Request, Response } from "express";

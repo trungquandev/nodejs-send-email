@@ -1,3 +1,8 @@
+/**
+ * Created by https://github.com/AzouKr.
+ * schema/emailSchema.ts
+ */
+
 import { object, string, TypeOf } from "zod";
 
 

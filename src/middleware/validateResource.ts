@@ -1,3 +1,8 @@
+/**
+ * Created by https://github.com/AzouKr.
+ * middleware/validateResource.ts
+ */
+
 import { Request, Response, NextFunction } from "express";
 import { AnyZodObject } from "zod";
 
