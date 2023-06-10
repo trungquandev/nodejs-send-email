@@ -4,6 +4,8 @@
   "description": "Nodejs send email with nodemailer - https://trungquandev.com",
   "main": "server.js",
   "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
